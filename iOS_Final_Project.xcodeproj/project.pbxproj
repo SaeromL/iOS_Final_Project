@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454472BC7AA47009AF807 /* AddViewController.swift */; };
+		7B64544A2BC7AA5F009AF807 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454492BC7AA5F009AF807 /* ProductListController.swift */; };
+		7B64544C2BC7AAC2009AF807 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64544B2BC7AAC2009AF807 /* MyData.swift */; };
+		7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544D2BC7AC9C009AF807 /* main.jpeg */; };
+		7B6454502BC7B09F009AF807 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544F2BC7B09F009AF807 /* add.jpeg */; };
+		7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */; };
 		EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */; };
 		EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */; };
 		EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C82BBB7D5D00F1023F /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B6454472BC7AA47009AF807 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		7B6454492BC7AA5F009AF807 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
+		7B64544B2BC7AAC2009AF807 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		7B64544D2BC7AC9C009AF807 /* main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpeg; sourceTree = "<group>"; };
+		7B64544F2BC7B09F009AF807 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
+		7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySiteCell.swift; sourceTree = "<group>"; };
 		EDE540C12BBB7D5D00F1023F /* iOS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +49,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B6454442BC7A995009AF807 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7B64544F2BC7B09F009AF807 /* add.jpeg */,
+				7B64544D2BC7AC9C009AF807 /* main.jpeg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		7B6454452BC7A99B009AF807 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		7B6454462BC7A9A3009AF807 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDE540C82BBB7D5D00F1023F /* ViewController.swift */,
+				7B6454472BC7AA47009AF807 /* AddViewController.swift */,
+				7B6454492BC7AA5F009AF807 /* ProductListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		EDE540B82BBB7D5D00F1023F = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,17 @@
 		EDE540C32BBB7D5D00F1023F /* iOS_Final_Project */ = {
 			isa = PBXGroup;
 			children = (
+				7B6454462BC7A9A3009AF807 /* Controllers */,
+				7B6454452BC7A99B009AF807 /* Database */,
+				7B6454442BC7A995009AF807 /* images */,
 				EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */,
 				EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */,
-				EDE540C82BBB7D5D00F1023F /* ViewController.swift */,
 				EDE540CA2BBB7D5D00F1023F /* Main.storyboard */,
 				EDE540CD2BBB7D6300F1023F /* Assets.xcassets */,
 				EDE540CF2BBB7D6300F1023F /* LaunchScreen.storyboard */,
 				EDE540D22BBB7D6300F1023F /* Info.plist */,
+				7B64544B2BC7AAC2009AF807 /* MyData.swift */,
+				7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */,
 			);
 			path = iOS_Final_Project;
 			sourceTree = "<group>";
@@ -125,8 +167,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6454502BC7B09F009AF807 /* add.jpeg in Resources */,
 				EDE540CE2BBB7D6300F1023F /* Assets.xcassets in Resources */,
 				EDE540D12BBB7D6300F1023F /* Base in Resources */,
+				7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */,
 				EDE540CC2BBB7D5D00F1023F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +184,11 @@
 			files = (
 				EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
+				7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */,
+				7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */,
+				7B64544C2BC7AAC2009AF807 /* MyData.swift in Sources */,
 				EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */,
+				7B64544A2BC7AA5F009AF807 /* ProductListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
