@@ -15,6 +15,7 @@
 		7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */; };
 		CEA93D582BC87ED500BFC5A5 /* DisplayReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */; };
 		CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */; };
+		CEA93D5C2BC8890500BFC5A5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D5B2BC8890500BFC5A5 /* RegisterViewController.swift */; };
 		ED1EE79D2BC883FC004EC878 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EE79C2BC883FC004EC878 /* SearchViewController.swift */; };
 		ED1EE79F2BC8840D004EC878 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EE79E2BC8840D004EC878 /* LoginViewController.swift */; };
 		EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySiteCell.swift; sourceTree = "<group>"; };
 		CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReportViewController.swift; sourceTree = "<group>"; };
 		CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListingViewController.swift; sourceTree = "<group>"; };
+		CEA93D5B2BC8890500BFC5A5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ED1EE79C2BC883FC004EC878 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED1EE79E2BC8840D004EC878 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EDE540C12BBB7D5D00F1023F /* iOS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */,
 				ED1EE79C2BC883FC004EC878 /* SearchViewController.swift */,
 				ED1EE79E2BC8840D004EC878 /* LoginViewController.swift */,
+				CEA93D5B2BC8890500BFC5A5 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				ED1EE79D2BC883FC004EC878 /* SearchViewController.swift in Sources */,
 				CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */,
 				EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */,
+				CEA93D5C2BC8890500BFC5A5 /* RegisterViewController.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
 				7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */,
 				7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */,
