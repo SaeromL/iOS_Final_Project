@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA93D542BC874A700BFC5A5 /* ReportListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D532BC874A700BFC5A5 /* ReportListingViewController.swift */; };
+		CEA93D562BC874D900BFC5A5 /* DisplayReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D552BC874D900BFC5A5 /* DisplayReportViewController.swift */; };
 		EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */; };
 		EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */; };
 		EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C82BBB7D5D00F1023F /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEA93D532BC874A700BFC5A5 /* ReportListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListingViewController.swift; sourceTree = "<group>"; };
+		CEA93D552BC874D900BFC5A5 /* DisplayReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReportViewController.swift; sourceTree = "<group>"; };
 		EDE540C12BBB7D5D00F1023F /* iOS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				EDE540CD2BBB7D6300F1023F /* Assets.xcassets */,
 				EDE540CF2BBB7D6300F1023F /* LaunchScreen.storyboard */,
 				EDE540D22BBB7D6300F1023F /* Info.plist */,
+				CEA93D532BC874A700BFC5A5 /* ReportListingViewController.swift */,
+				CEA93D552BC874D900BFC5A5 /* DisplayReportViewController.swift */,
 			);
 			path = iOS_Final_Project;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */,
+				CEA93D562BC874D900BFC5A5 /* DisplayReportViewController.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
 				EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */,
+				CEA93D542BC874A700BFC5A5 /* ReportListingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
