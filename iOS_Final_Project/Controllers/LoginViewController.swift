@@ -2,8 +2,6 @@
 //  LoginViewController.swift
 //  iOS_Final_Project
 //
-//  Created by Saerom Lee on 2024-04-11.
-//
 
 import UIKit
 

@@ -2,8 +2,7 @@
 //  AddViewController.swift
 //  iOS_Final_Project
 //
-//  Created by Harry Nguyen on 2024-04-11.
-//
+
 
 import UIKit
 

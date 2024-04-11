@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  iOS_Final_Project
 //
-//  Created by Saerom Lee on 2024-04-01.
-//
+
 
 import UIKit
 
