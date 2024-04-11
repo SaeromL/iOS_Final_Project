@@ -13,6 +13,8 @@
 		7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544D2BC7AC9C009AF807 /* main.jpeg */; };
 		7B6454502BC7B09F009AF807 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544F2BC7B09F009AF807 /* add.jpeg */; };
 		7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */; };
+		CEA93D582BC87ED500BFC5A5 /* DisplayReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */; };
+		CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */; };
 		EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */; };
 		EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */; };
 		EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C82BBB7D5D00F1023F /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		7B64544D2BC7AC9C009AF807 /* main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpeg; sourceTree = "<group>"; };
 		7B64544F2BC7B09F009AF807 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
 		7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySiteCell.swift; sourceTree = "<group>"; };
+		CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReportViewController.swift; sourceTree = "<group>"; };
+		CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListingViewController.swift; sourceTree = "<group>"; };
 		EDE540C12BBB7D5D00F1023F /* iOS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				EDE540C82BBB7D5D00F1023F /* ViewController.swift */,
 				7B6454472BC7AA47009AF807 /* AddViewController.swift */,
 				7B6454492BC7AA5F009AF807 /* ProductListController.swift */,
+				CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */,
+				CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */,
 				EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
 				7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */,
@@ -189,6 +196,7 @@
 				7B64544C2BC7AAC2009AF807 /* MyData.swift in Sources */,
 				EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */,
 				7B64544A2BC7AA5F009AF807 /* ProductListController.swift in Sources */,
+				CEA93D582BC87ED500BFC5A5 /* DisplayReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
