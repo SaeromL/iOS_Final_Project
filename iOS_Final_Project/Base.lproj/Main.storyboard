@@ -110,6 +110,7 @@
                         <outlet property="tfEmail" destination="PPB-3G-6CV" id="KEw-eJ-AMx"/>
                         <outlet property="tfName" destination="3Cv-jH-6g8" id="rwL-NW-6y4"/>
                         <outlet property="tfPassword" destination="Acz-AP-lHb" id="K7O-Wh-CJP"/>
+                        <segue destination="JG7-k3-I3a" kind="presentation" identifier="RegisterToLoginSegue" id="SwM-DZ-JCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syh-28-t1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,7 +122,7 @@
             <objects>
                 <viewController id="JG7-k3-I3a" customClass="LoginViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCr-Ra-pP1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.jpeg" id="hoo-4x-oKd">
@@ -561,6 +562,9 @@
             <point key="canvasLocation" x="2934" y="25"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SwM-DZ-JCG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add.jpeg" width="800" height="1422"/>
         <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="104"/>

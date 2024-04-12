@@ -10,7 +10,7 @@ import FirebaseCoreInternal
 import Firebase
 
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -77,10 +77,12 @@ class RegisterViewController: UIViewController {
                             // Show error message
                             self.showError("Error saving user data")
                         }
+                        else 
+                        {
+                            // Registration successful, perform segue to login view controller
+                            self.performSegue(withIdentifier: "RegisterToLoginSegue", sender: nil)
+                        }
                     }
-                    
-                    // Transition to the home screen
-//                    self.transitionToHome()
                 }
             }
         }
@@ -112,6 +114,11 @@ class RegisterViewController: UIViewController {
         }
         
         return nil
+    }
+    
+    //to make the keyboard disappear
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
     
     /*
