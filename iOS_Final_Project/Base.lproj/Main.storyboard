@@ -193,6 +193,9 @@
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Reports"/>
+                                <connections>
+                                    <segue destination="Oeg-QI-3Al" kind="presentation" modalPresentationStyle="fullScreen" id="adj-X1-ykB"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-Qd-feZ">
                                 <rect key="frame" x="0.0" y="49" width="393" height="44"/>
@@ -461,13 +464,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Display Report" id="pdp-lV-uZ7">
-                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.badge.clock" catalog="system" style="plain" id="4dm-54-Pcu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="uR4-yt-UNh">
-                                                <rect key="frame" x="16" y="5" width="88.666666666666671" height="34.333333333333336"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system" title="Back"/>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="fUp-ro-3oT">
+                                            <connections>
+                                                <segue destination="Oeg-QI-3Al" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="5Y1-1t-mJL"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -493,36 +493,85 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
-                                <rect key="frame" x="0.0" y="45" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
+                                <rect key="frame" x="0.0" y="23" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="Report Listing" id="PtS-OJ-COS">
-                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.badge.clock" catalog="system" style="plain" id="9FK-VI-MIP">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="m00-dN-cTL">
-                                                <rect key="frame" x="16" y="5" width="88.666666666666671" height="34.333333333333336"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system" title="Back"/>
-                                            </button>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="kRt-jp-hTN"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e0-Mm-jVx">
+                                <rect key="frame" x="105" y="198" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="KL0-MW-2yb"/>
+                                    <constraint firstAttribute="height" constant="70" id="cLB-gP-kcF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Products Quantity"/>
+                                <connections>
+                                    <action selector="productQtdReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="5Ie-HO-QzE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSn-qD-CUq">
+                                <rect key="frame" x="105" y="391" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="IoW-fE-pk5"/>
+                                    <constraint firstAttribute="width" constant="185" id="w2f-Sr-CpT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Products Added"/>
+                                <connections>
+                                    <action selector="productAddedReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="cM5-7f-dfI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2N-Bf-owe">
+                                <rect key="frame" x="105" y="577" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="Kag-EM-s1N"/>
+                                    <constraint firstAttribute="height" constant="70" id="e1v-wl-0K2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Product Price"/>
+                                <connections>
+                                    <action selector="productPriceReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="NmQ-Ch-TXP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uWY-Cr-1dK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A2N-Bf-owe" firstAttribute="top" secondItem="WSn-qD-CUq" secondAttribute="bottom" constant="122" id="C6l-IP-gfs"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="bottom" secondItem="A2N-Bf-owe" secondAttribute="bottom" constant="199" id="GV2-Yc-cbW"/>
+                            <constraint firstItem="0e0-Mm-jVx" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="105" id="Iqs-Ws-Ao6"/>
+                            <constraint firstItem="A2N-Bf-owe" firstAttribute="top" secondItem="WSn-qD-CUq" secondAttribute="bottom" constant="122" id="Ow0-kR-aOm"/>
+                            <constraint firstItem="WSn-qD-CUq" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="105" id="Rbj-ch-bE8"/>
+                            <constraint firstItem="0e0-Mm-jVx" firstAttribute="top" secondItem="Kqt-4H-b1e" secondAttribute="bottom" constant="131" id="XaF-eU-TqU"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="WSn-qD-CUq" secondAttribute="trailing" constant="103" id="bOb-TA-6W7"/>
+                            <constraint firstItem="A2N-Bf-owe" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="105" id="mMU-Vb-kFG"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="0e0-Mm-jVx" secondAttribute="trailing" constant="103" id="oMZ-62-IL3"/>
+                            <constraint firstItem="WSn-qD-CUq" firstAttribute="top" secondItem="0e0-Mm-jVx" secondAttribute="bottom" constant="137" id="oRb-tA-qag"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="A2N-Bf-owe" secondAttribute="trailing" constant="103" id="pOh-51-2yH"/>
+                            <constraint firstItem="WSn-qD-CUq" firstAttribute="top" secondItem="0e0-Mm-jVx" secondAttribute="bottom" constant="123" id="qjI-Ca-5mi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnProductAdded" destination="WSn-qD-CUq" id="GKI-n0-VFg"/>
+                        <outlet property="btnProductPrice" destination="A2N-Bf-owe" id="Ni3-eb-dkM"/>
+                        <outlet property="btnProductQtd" destination="0e0-Mm-jVx" id="21R-aF-hRs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cb-2b-7tS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2934" y="25"/>
+            <point key="canvasLocation" x="2932.06106870229" y="24.647887323943664"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Y1-1t-mJL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add.jpeg" width="800" height="1422"/>
         <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="104"/>
-        <image name="arrowshape.turn.up.backward.badge.clock" catalog="system" width="128" height="107"/>
         <image name="main.jpeg" width="192" height="341.27999877929688"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

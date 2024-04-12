@@ -14,7 +14,10 @@ class DisplayReportViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    var filter: String?
+    var reportType: String?
+       
+    
     /*
     // MARK: - Navigation
 
@@ -24,5 +27,4 @@ class DisplayReportViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
