@@ -8,6 +8,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var tfUsername: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    
+    @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var btnCancel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,4 +31,11 @@ class RegisterViewController: UIViewController {
     }
     */
 
+    @IBAction func cancelTapped(_ sender: Any) {
+    }
+    
+    
+    @IBAction func registerTapped(_ sender: Any) {
+    }
+    
 }
