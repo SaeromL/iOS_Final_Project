@@ -26,6 +26,11 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func unwindToLoginController(segue : UIStoryboardSegue)
+    {
+        
+    }
     
     // Check the fields and validate that the data is correct.
     // If everything is correct, this method retunrs nil.
@@ -38,6 +43,7 @@ class LoginViewController: UIViewController {
             return "Please enter your username or password."
         }
         return nil
+
     }
 
 
