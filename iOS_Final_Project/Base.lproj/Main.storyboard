@@ -675,9 +675,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
-                                <rect key="frame" x="0.0" y="45" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
+                                <rect key="frame" x="0.0" y="9.3333333333333357" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="Report Listing" id="PtS-OJ-COS">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="cNy-e3-WAz">
@@ -688,14 +687,69 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2d-uu-MYo">
+                                <rect key="frame" x="113" y="391" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Q29-Pm-8kS"/>
+                                    <constraint firstAttribute="width" constant="185" id="n2D-Aa-eMD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Product Added"/>
+                                <connections>
+                                    <action selector="productAddedReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="5PB-Ml-k2T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0el-Eq-BRF">
+                                <rect key="frame" x="113" y="598" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Ru0-7G-BJn"/>
+                                    <constraint firstAttribute="width" constant="185" id="dbh-9e-xdj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Product Price"/>
+                                <connections>
+                                    <action selector="productPriceReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="aQc-oF-smE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-Ey-zQK">
+                                <rect key="frame" x="113" y="177" width="185" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1Nd-46-e4M"/>
+                                    <constraint firstAttribute="width" constant="185" id="GzA-5Y-8Ka"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Product Quantity"/>
+                                <connections>
+                                    <action selector="productQtdReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="xmQ-ty-i1K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uWY-Cr-1dK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="0el-Eq-BRF" secondAttribute="trailing" constant="95" id="3w1-y0-kKB"/>
+                            <constraint firstItem="W2d-uu-MYo" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="113" id="5CV-d2-wOt"/>
+                            <constraint firstItem="W2d-uu-MYo" firstAttribute="top" secondItem="hFL-Ey-zQK" secondAttribute="bottom" constant="157.66999999999999" id="6XY-fo-BEj"/>
+                            <constraint firstItem="W2d-uu-MYo" firstAttribute="top" secondItem="hFL-Ey-zQK" secondAttribute="bottom" constant="157.66999999999999" id="CKJ-Uq-NEn"/>
+                            <constraint firstItem="0el-Eq-BRF" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="113" id="Fk5-7u-z9y"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="bottom" secondItem="0el-Eq-BRF" secondAttribute="bottom" constant="184" id="Hyl-JD-gPs"/>
+                            <constraint firstItem="hFL-Ey-zQK" firstAttribute="top" secondItem="Kqt-4H-b1e" secondAttribute="bottom" constant="97" id="MOC-4j-lFE"/>
+                            <constraint firstItem="0el-Eq-BRF" firstAttribute="top" secondItem="W2d-uu-MYo" secondAttribute="bottom" constant="150" id="S8C-vg-VuR"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="W2d-uu-MYo" secondAttribute="trailing" constant="95" id="VO2-j6-NEd"/>
+                            <constraint firstItem="hFL-Ey-zQK" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="113" id="WRn-eJ-9Qd"/>
+                            <constraint firstItem="0el-Eq-BRF" firstAttribute="top" secondItem="W2d-uu-MYo" secondAttribute="bottom" constant="150" id="cHV-Ex-wER"/>
+                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="hFL-Ey-zQK" secondAttribute="trailing" constant="95" id="zjQ-gN-ret"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnProductAdded" destination="W2d-uu-MYo" id="9Sr-TB-d9g"/>
+                        <outlet property="btnProductPrice" destination="0el-Eq-BRF" id="v5Q-Q6-nii"/>
+                        <outlet property="btnProductQtd" destination="hFL-Ey-zQK" id="gAV-FD-60l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cb-2b-7tS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="694"/>
+            <point key="canvasLocation" x="719.84732824427476" y="693.66197183098598"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
