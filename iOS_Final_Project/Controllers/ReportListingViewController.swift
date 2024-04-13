@@ -33,42 +33,56 @@ class ReportListingViewController: UIViewController {
            showFilterOptions(forReportType: "price")
        }
        
-       private func showFilterOptions(forReportType reportType: String) {
-           let alert = UIAlertController(title: "Report Filter", message: "Choose the filter", preferredStyle: .actionSheet)
-           
-           // Add filter actions
-           let equalAction = UIAlertAction(title: "Equal", style: .default) { _ in
-               self.generateReport(filter: "equal", reportType: reportType)
-           }
-           let greaterAction = UIAlertAction(title: "Greater than", style: .default) { _ in
-               self.generateReport(filter: "greater", reportType: reportType)
-           }
-           let lessAction = UIAlertAction(title: "Less than", style: .default) { _ in
-               self.generateReport(filter: "less", reportType: reportType)
-           }
-           
-           // Add cancel action
-           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-           
-           alert.addAction(equalAction)
-           alert.addAction(greaterAction)
-           alert.addAction(lessAction)
-           alert.addAction(cancelAction)
-           
-           // Present the action sheet
-           present(alert, animated: true)
-       }
-       
-       private func generateReport(filter: String, reportType: String) {
-           print("Report generated with filter: \(filter) for report type: \(reportType)")
-           
-           // Assuming you have set up your DisplayReportViewController in the storyboard
-           if let reportDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "DisplayReportViewController") as? DisplayReportViewController {
-               reportDetailsViewController.filter = filter
-               reportDetailsViewController.reportType = reportType
-               navigationController?.pushViewController(reportDetailsViewController, animated: true)
-           }
-       }
+    private func showFilterOptions(forReportType reportType: String) {
+        let alert = UIAlertController(title: "Report Filter", message: "Choose the filter and enter a value", preferredStyle: .alert)
+        
+        // Adicionar um campo de texto para a entrada do número
+        alert.addTextField { textField in
+            textField.placeholder = "Enter a value"
+            textField.keyboardType = .numberPad
+        }
+        
+        // Adicione as ações de filtro
+        alert.addAction(UIAlertAction(title: "Equal", style: .default, handler: { _ in
+            if let value = alert.textFields?.first?.text, !value.isEmpty {
+                self.generateReport(filter: "equal", value: value, reportType: reportType)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Greater than", style: .default, handler: { _ in
+            if let value = alert.textFields?.first?.text, !value.isEmpty {
+                self.generateReport(filter: "greater", value: value, reportType: reportType)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Less than", style: .default, handler: { _ in
+            if let value = alert.textFields?.first?.text, !value.isEmpty {
+                self.generateReport(filter: "less", value: value, reportType: reportType)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+
+    private func generateReport(filter: String, value: String, reportType: String) {
+        guard let number = Int(value) else {
+            let alert = UIAlertController(title: "Invalid Input", message: "Please enter a valid number.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+        
+        print("Report generated with filter: \(filter) and value: \(number) for report type: \(reportType)")
+        
+        if let reportDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "DisplayReportViewController") as? DisplayReportViewController {
+            reportDetailsViewController.filter = filter
+            reportDetailsViewController.value = number
+            reportDetailsViewController.reportType = reportType
+            navigationController?.pushViewController(reportDetailsViewController, animated: true)
+        }
+    }
 
 /*
     // MARK: - Navigation
