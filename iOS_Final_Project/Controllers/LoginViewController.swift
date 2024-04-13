@@ -72,11 +72,8 @@ class LoginViewController: UIViewController {
                     self.lbError.alpha = 1
                 }
                 else {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainViewController = storyboard.instantiateViewController(withIdentifier: "mainViewController")
-                    
-                    self.view.window?.rootViewController = mainViewController
-                    self.view.window?.makeKeyAndVisible()
+                    // After successful login
+                    self.dismiss(animated: true)
                 }
             }
         }

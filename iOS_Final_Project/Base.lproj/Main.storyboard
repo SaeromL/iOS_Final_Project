@@ -2,9 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
-
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,7 +35,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Cancel"/>
                                 <connections>
-                                    <segue destination="VTh-4Y-6cA" kind="unwind" unwindAction="unwindToLoginControllerWithSegue:" id="GvB-bZ-duf"/>
                                     <action selector="registerTapped:" destination="kQx-eU-zvJ" eventType="touchUpInside" id="cEo-zI-lOr"/>
                                     <segue destination="JG7-k3-I3a" kind="presentation" modalPresentationStyle="fullScreen" id="Pqq-eE-AX6"/>
                                 </connections>
@@ -117,14 +115,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syh-28-t1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="23"/>
+            <point key="canvasLocation" x="-1650" y="4"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6r3-XO-7HV">
             <objects>
-                <viewController id="JG7-k3-I3a" customClass="LoginViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="XCr-Ra-pP1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController storyboardIdentifier="LoginViewController" id="JG7-k3-I3a" customClass="LoginViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XCr-Ra-pP1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.jpeg" id="hoo-4x-oKd">
@@ -132,7 +130,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="udL-vU-KJu">
-                                <rect key="frame" x="40" y="80" width="313" height="580"/>
+                                <rect key="frame" x="40" y="80" width="313" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-fJ-DMS">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
@@ -169,7 +167,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWj-sk-YMS">
-                                        <rect key="frame" x="0.0" y="410" width="313" height="50"/>
+                                        <rect key="frame" x="0.0" y="410" width="313" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="4mJ-yF-vj5"/>
                                         </constraints>
@@ -178,7 +176,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYt-Zi-kgI">
-                                        <rect key="frame" x="0.0" y="480" width="313" height="40"/>
+                                        <rect key="frame" x="0.0" y="448" width="313" height="40"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Login">
@@ -191,7 +189,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-Vv-mO6">
-                                        <rect key="frame" x="0.0" y="540" width="313" height="40"/>
+                                        <rect key="frame" x="0.0" y="508" width="313" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="juT-XN-61N"/>
                                         </constraints>
@@ -228,14 +226,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fg-77-DGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="VTh-4Y-6cA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-775" y="4"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +248,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Search Products"/>
                                 <connections>
-                                    <segue destination="fxN-35-It0" kind="presentation" id="bv0-4e-Ayv"/>
+                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4d-dX-Dr2"/>
+                                    <segue destination="fxN-35-It0" kind="presentation" identifier="searchProductSegue" modalPresentationStyle="fullScreen" id="bv0-4e-Ayv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-1o-ibS">
@@ -261,7 +259,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Product"/>
                                 <connections>
-                                    <segue destination="xFf-Ms-LIw" kind="presentation" id="T39-7M-J1j"/>
+                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdl-ff-RFV"/>
+                                    <segue destination="xFf-Ms-LIw" kind="presentation" identifier="addProductSegue" modalPresentationStyle="fullScreen" id="T39-7M-J1j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1q-bo-ub6">
@@ -271,25 +270,14 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Reports"/>
                                 <connections>
-                                    <segue destination="Oeg-QI-3Al" kind="presentation" id="v6B-YG-dSE"/>
+                                    <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOH-94-Urh"/>
+                                    <segue destination="Oeg-QI-3Al" kind="presentation" identifier="reportProductSegue" modalPresentationStyle="fullScreen" id="v6B-YG-dSE"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-Qd-feZ">
                                 <rect key="frame" x="0.0" y="49" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
-
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQz-JO-eCb">
-                                <rect key="frame" x="213" y="236" width="164" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemPinkColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Product List"/>
-                                <connections>
-                                    <segue destination="Eah-9O-h2q" kind="presentation" id="2lM-yc-heg"/>
-                                </connections>
-                            </button>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L1-k9-Xpt">
                                 <rect key="frame" x="124" y="130" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -304,17 +292,18 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Product List"/>
                                 <connections>
-                                    <segue destination="Eah-9O-h2q" kind="presentation" modalPresentationStyle="fullScreen" id="dru-pJ-698"/>
+                                    <action selector="listButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4y-O6-NHc"/>
+                                    <segue destination="Eah-9O-h2q" kind="presentation" identifier="listProductSegue" modalPresentationStyle="fullScreen" id="dru-pJ-698"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gjv-JP-H0K"/>
                     <connections>
                         <outlet property="productListBtn" destination="tQz-JO-eCb" id="hKi-eQ-eMO"/>
                     </connections>
-                    <navigationItem key="navigationItem" id="Gjv-JP-H0K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="x3u-ZD-otg" userLabel="Exit" sceneMemberID="exit"/>
@@ -326,7 +315,7 @@
             <objects>
                 <viewController id="fxN-35-It0" customClass="SearchViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJz-Rx-Zhp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search By:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-yO-BRN">
@@ -341,7 +330,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Search" id="fZM-aS-JlY">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cVp-bm-e8i"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cVp-bm-e8i">
+                                            <connections>
+                                                <segue destination="XnK-G2-E8U" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="Xm6-pV-goB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -397,6 +390,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79V-js-8tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XnK-G2-E8U" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-750" y="694"/>
         </scene>
@@ -405,7 +399,7 @@
             <objects>
                 <viewController id="xFf-Ms-LIw" customClass="AddViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBn-Kc-ZbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="IrZ-c2-3h5">
@@ -416,8 +410,6 @@
                                 <rect key="frame" x="0.0" y="47" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Product" id="6j9-ki-nSc">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3jW-DS-t1a">
                                     <navigationItem title="Product Add" id="6j9-ki-nSc">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="3jW-DS-t1a">
                                             <connections>
@@ -543,7 +535,7 @@
             <objects>
                 <viewController id="Eah-9O-h2q" customClass="ProductListController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0dG-44-NLq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Nm-Jr-1zZ">
@@ -686,7 +678,7 @@
             <objects>
                 <viewController id="Oeg-QI-3Al" customClass="ReportListingViewController" customModule="iOS_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EHV-LQ-vYQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.jpeg" id="Tu4-vq-aCX">
@@ -700,13 +692,14 @@
                                     <navigationItem title="Report Listing" id="PtS-OJ-COS">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.backward.badge.clock" catalog="system" style="plain" id="9FK-VI-MIP">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="m00-dN-cTL">
-
-                                                <rect key="frame" x="16" y="11" width="88.666666666666671" height="34.333333333333336"/>
-
+                                                <rect key="frame" x="16" y="5" width="88.666666666666671" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system" title="Back"/>
                                             </button>
+                                            <connections>
+                                                <segue destination="w3k-HT-jQz" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="RIS-Mx-RmR"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -717,11 +710,13 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cb-2b-7tS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="w3k-HT-jQz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="720" y="694"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="dru-pJ-698"/>
         <segue reference="SwM-DZ-JCG"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -732,22 +727,20 @@
         <image name="flash.jpeg" width="760" height="780"/>
         <image name="main.jpeg" width="192" height="341.27999877929688"/>
         <image name="superman.png" width="860" height="704"/>
-        <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <image name="main.jpeg" width="192" height="341.27999877929688"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
