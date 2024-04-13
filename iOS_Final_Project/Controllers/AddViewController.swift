@@ -8,7 +8,11 @@ import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var productListBtn: UIButton!
-   
+    
+    @IBOutlet  var profile1Btn: UIButton!
+    @IBOutlet  var profile2Btn: UIButton!
+    @IBOutlet  var profile3Btn: UIButton!
+
     @IBOutlet var slVolume : UISlider!
     @IBOutlet var lbVolume : UILabel!
     
@@ -21,23 +25,50 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var submitButton: UIButton!
     var selectedAvatar: String = ""
     
+    // Function to update the appearance of the buttons based on the selected avatar
+    func updateButtonAppearance() {
+        // Reset appearance for all buttons
+        profile1Btn.layer.borderColor = UIColor.clear.cgColor
+        profile2Btn.layer.borderColor = UIColor.clear.cgColor
+        profile3Btn.layer.borderColor = UIColor.clear.cgColor
+        
+        // Set appearance for selected button
+        switch selectedAvatar {
+        case "batman.jpeg":
+            profile1Btn.layer.borderColor = UIColor.blue.cgColor
+            profile1Btn.layer.borderWidth = 2
+        case "superman.png":
+            profile2Btn.layer.borderColor = UIColor.blue.cgColor
+            profile2Btn.layer.borderWidth = 2
+        case "flash.jpeg":
+            profile3Btn.layer.borderColor = UIColor.blue.cgColor
+            profile3Btn.layer.borderWidth = 2
+        default:
+            break
+        }
+    }
+
     // Action for avatar button 1
-      @IBAction func profile1BtnTapped(_ sender: UIButton) {
-          selectedAvatar = "batman.jpeg"
-          print(selectedAvatar)
-      }
-      
-      // Action for avatar button 2
-      @IBAction func profile2BtnTapped(_ sender: UIButton) {
-          selectedAvatar = "superman.png"
-          print(selectedAvatar)
-      }
-      
-      // Action for avatar button 3
-      @IBAction func profile3BtnTapped(_ sender: UIButton) {
-          selectedAvatar = "flash.jpeg"
-          print(selectedAvatar)
-      }
+    @IBAction func profile1BtnTapped(_ sender: UIButton) {
+        selectedAvatar = "batman.jpeg"
+        print(selectedAvatar)
+        updateButtonAppearance()
+    }
+
+    // Action for avatar button 2
+    @IBAction func profile2BtnTapped(_ sender: UIButton) {
+        selectedAvatar = "superman.png"
+        print(selectedAvatar)
+        updateButtonAppearance()
+    }
+
+    // Action for avatar button 3
+    @IBAction func profile3BtnTapped(_ sender: UIButton) {
+        selectedAvatar = "flash.jpeg"
+        print(selectedAvatar)
+        updateButtonAppearance()
+    }
+
 
   
     
@@ -100,29 +131,29 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
     
    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch : UITouch = touches.first!
-        let touchPoint : CGPoint = touch.location(in: self.view!)
-        
-        let tableFrame : CGRect = productListBtn.frame
-        
-        
-        if tableFrame.contains(touchPoint)
-        {
-            rememberEnteredData()
-            performSegue(withIdentifier: "HomeSegueToTable", sender: self)
-        }
-       
-    }
-    func rememberEnteredData(){
-        let defaults = UserDefaults.standard
-        defaults.set(tfName.text, forKey:"lastProduct")
-        defaults.set(tfCode.text, forKey:"lastCode")
-        defaults.set(tfPrice.text, forKey:"lastPrice")
-        defaults.set(slVolume.value, forKey: "lastQty")
-    
-      
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch : UITouch = touches.first!
+//        let touchPoint : CGPoint = touch.location(in: self.view!)
+//        
+//        let tableFrame : CGRect = productListBtn.frame
+//        
+//        
+//        if tableFrame.contains(touchPoint)
+//        {
+//            rememberEnteredData()
+//            performSegue(withIdentifier: "HomeSegueToTable", sender: self)
+//        }
+//       
+//    }
+//    func rememberEnteredData(){
+//        let defaults = UserDefaults.standard
+//        defaults.set(tfName.text, forKey:"lastProduct")
+//        defaults.set(tfCode.text, forKey:"lastCode")
+//        defaults.set(tfPrice.text, forKey:"lastPrice")
+//        defaults.set(slVolume.value, forKey: "lastQty")
+//    
+//      
+//    }
     
     @IBAction func sliderValueChanged(sender : UISlider)
     {
