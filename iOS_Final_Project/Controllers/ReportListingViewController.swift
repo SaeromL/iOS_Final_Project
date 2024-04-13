@@ -14,12 +14,16 @@ class ReportListingViewController: UIViewController {
     
     @IBOutlet var btnProductAdded: UIButton!
     
+    @IBOutlet var btnAllProducts: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func allProductcsReport(_ sender: Any) {
+    }
     
     @IBAction func productQtdReport(_ sender: Any) {
            showFilterOptions(forReportType: "quantity")
@@ -35,14 +39,16 @@ class ReportListingViewController: UIViewController {
        
     private func showFilterOptions(forReportType reportType: String) {
         let alert = UIAlertController(title: "Report Filter", message: "Choose the filter and enter a value", preferredStyle: .alert)
-        
-        // Adicionar um campo de texto para a entrada do número
+
         alert.addTextField { textField in
-            textField.placeholder = "Enter a value"
-            textField.keyboardType = .numberPad
+            if reportType == "added" {
+                textField.placeholder = "Enter date (yyyy-MM-dd)"
+            } else {
+                textField.placeholder = "Enter a value"
+                textField.keyboardType = .numberPad
+            }
         }
         
-        // Adicione as ações de filtro
         alert.addAction(UIAlertAction(title: "Equal", style: .default, handler: { _ in
             if let value = alert.textFields?.first?.text, !value.isEmpty {
                 self.generateReport(filter: "equal", value: value, reportType: reportType)
@@ -65,25 +71,48 @@ class ReportListingViewController: UIViewController {
         
         present(alert, animated: true)
     }
-
+    
     private func generateReport(filter: String, value: String, reportType: String) {
-        guard let number = Int(value) else {
-            let alert = UIAlertController(title: "Invalid Input", message: "Please enter a valid number.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-            return
+        if reportType == "added" {
+            guard let dateValue = convertStringToDate(value) else {
+                invalidInputAlert(message: "Please enter a valid date in format yyyy-MM-dd.")
+                return
         }
-        
-        print("Report generated with filter: \(filter) and value: \(number) for report type: \(reportType)")
-        
+            
+            navigateToDisplayReportViewController(filter: filter, date: dateValue, reportType: reportType)
+        } else {
+            // Para 'quantity' e 'price', esperamos um valor numérico
+            guard let numberValue = Int(value) else {
+                invalidInputAlert(message: "Please enter a valid number.")
+                return
+            }
+            
+            navigateToDisplayReportViewController(filter: filter, value: numberValue, reportType: reportType)
+        }
+    }
+
+    private func invalidInputAlert(message: String) {
+        let alert = UIAlertController(title: "Invalid Input", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
+    private func navigateToDisplayReportViewController(filter: String, value: Int? = nil, date: Date? = nil, reportType: String) {
         if let reportDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "DisplayReportViewController") as? DisplayReportViewController {
             reportDetailsViewController.filter = filter
-            reportDetailsViewController.value = number
+            reportDetailsViewController.value = value
+            reportDetailsViewController.date = date
             reportDetailsViewController.reportType = reportType
             navigationController?.pushViewController(reportDetailsViewController, animated: true)
         }
     }
 
+    private func convertStringToDate(_ dateString: String, dateFormat: String = "yyyy-MM-dd") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.date(from: dateString)
+    }
+    
 /*
     // MARK: - Navigation
 
