@@ -12,7 +12,10 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    @IBAction func unwindToLoginController(segue : UIStoryboardSegue)
+    {
+        
+    }
 
     /*
     // MARK: - Navigation
