@@ -35,9 +35,10 @@ class EasySiteCell: UITableViewCell {
         secondaryLabel.frame = CGRect(x: 100, y: 30, width: 460, height: 30)
         thirdLabel.frame = CGRect(x: 100, y: 50, width: 460, height: 30)
         fourLabel.frame = CGRect(x: 100, y: 70, width: 460, height: 30)
-       
+        fifthLabel.frame = CGRect(x: 100, y: 90, width: 460, height: 30)
   
         profileImg.frame = CGRect(x: 20, y: 20, width: 70, height: 70)
+        
     }
 
     override func awakeFromNib() {

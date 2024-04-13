@@ -29,7 +29,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
       
       // Action for avatar button 2
       @IBAction func profile2BtnTapped(_ sender: UIButton) {
-          selectedAvatar = "superman.jpeg"
+          selectedAvatar = "superman.png"
           print(selectedAvatar)
       }
       
