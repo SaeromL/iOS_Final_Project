@@ -17,7 +17,11 @@
 		7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544D2BC7AC9C009AF807 /* main.jpeg */; };
 		7B6454502BC7B09F009AF807 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544F2BC7B09F009AF807 /* add.jpeg */; };
 		7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */; };
+
 		7BD38B712BC9EC5800B22008 /* project.db in Resources */ = {isa = PBXBuildFile; fileRef = 7BD38B702BC9EC5800B22008 /* project.db */; };
+
+		B0A8C5382BC8FB06007751C3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5372BC8FB06007751C3 /* Utilities.swift */; };
+
 		CEA93D582BC87ED500BFC5A5 /* DisplayReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */; };
 		CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */; };
 		CEA93D5C2BC8890500BFC5A5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D5B2BC8890500BFC5A5 /* RegisterViewController.swift */; };
@@ -71,7 +75,11 @@
 		7B64544D2BC7AC9C009AF807 /* main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpeg; sourceTree = "<group>"; };
 		7B64544F2BC7B09F009AF807 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
 		7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySiteCell.swift; sourceTree = "<group>"; };
+
 		7BD38B702BC9EC5800B22008 /* project.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = project.db; sourceTree = "<group>"; };
+
+		B0A8C5372BC8FB06007751C3 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+
 		CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReportViewController.swift; sourceTree = "<group>"; };
 		CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListingViewController.swift; sourceTree = "<group>"; };
 		CEA93D5B2BC8890500BFC5A5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +179,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		B0A8C5362BC8FAFD007751C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B0A8C5372BC8FB06007751C3 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EDE540B82BBB7D5D00F1023F = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +207,7 @@
 		EDE540C32BBB7D5D00F1023F /* iOS_Final_Project */ = {
 			isa = PBXGroup;
 			children = (
+				B0A8C5362BC8FAFD007751C3 /* Helpers */,
 				CEA93D5D2BC8A4DC00BFC5A5 /* GoogleService-Info.plist */,
 				7B6454462BC7A9A3009AF807 /* Controllers */,
 				7B6454452BC7A99B009AF807 /* Database */,
@@ -321,6 +338,7 @@
 				CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */,
 				EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */,
 				CEA93D5C2BC8890500BFC5A5 /* RegisterViewController.swift in Sources */,
+				B0A8C5382BC8FB06007751C3 /* Utilities.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
 				7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */,
 				7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */,
@@ -406,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -463,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -487,6 +505,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +533,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
