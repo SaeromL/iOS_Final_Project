@@ -234,7 +234,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return returnCode
         }
     
-    
+//    func updateRecordInDatabase(productData: MyData) {
+//        let updateQuery = "UPDATE data SET product = ?, code = ?, price = ?, quanity = ?, date = ?, avatar = ? WHERE id = ?;"
+//        
+//        if let db = openDatabase() {
+//            var updateStatement: OpaquePointer?
+//            if sqlite3_prepare_v2(db, updateQuery, -1, &updateStatement, nil) == SQLITE_OK {
+//                // Bind parameters
+//                sqlite3_bind_text(updateStatement, 1, productData.product, -1, nil)
+//                sqlite3_bind_text(updateStatement, 2, productData.code, -1, nil)
+//                sqlite3_bind_text(updateStatement, 3, productData.price, -1, nil)
+//                sqlite3_bind_int(updateStatement, 4, Int32(productData.quanity!))
+//                
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//                let dateString = dateFormatter.string(from: productData.date!)
+//                sqlite3_bind_text(updateStatement, 5, dateString, -1, nil)
+//                
+//                sqlite3_bind_text(updateStatement, 6, productData.avatar, -1, nil)
+//                sqlite3_bind_int(updateStatement, 7, Int32(productData.id!))
+//                
+//                // Execute the update query
+//                if sqlite3_step(updateStatement) == SQLITE_DONE {
+//                    print("Update successful")
+//                    // Update your data source if needed
+//                } else {
+//                    print("Update failed")
+//                }
+//            } else {
+//                print("Error preparing update statement")
+//            }
+//            sqlite3_finalize(updateStatement)
+//            sqlite3_close(db)
+//        } else {
+//            print("Unable to open database")
+//        }
+//    }
+
+
     func openDatabase() -> OpaquePointer? {
         var db: OpaquePointer? = nil
         if sqlite3_open(databasePath, &db) == SQLITE_OK {

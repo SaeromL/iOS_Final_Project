@@ -57,9 +57,9 @@ class ProductListController: UIViewController, UITableViewDataSource, UITableVie
     
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let more = UITableViewRowAction(style: .normal, title: "More", handler:
+        let more = UITableViewRowAction(style: .normal, title: "Edit", handler:
                                             {
-            action, index in print("More button tapped")
+            action, index in print("Edit button tapped")
         })
         more.backgroundColor = .lightGray
         let favourite = UITableViewRowAction(style: .normal, title: "Favourite", handler: {
@@ -110,6 +110,7 @@ class ProductListController: UIViewController, UITableViewDataSource, UITableVie
         alertcontroller.addAction(cancelAction)
         present(alertcontroller, animated: true)
     }
+   
     /*
     // MARK: - Navigation
 

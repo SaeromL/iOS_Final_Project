@@ -7,6 +7,7 @@
 import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet var productListBtn: UIButton!
     
     @IBOutlet  var profile1Btn: UIButton!
@@ -24,6 +25,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var submitButton: UIButton!
     var selectedAvatar: String = ""
+
+    
     
     // Function to update the appearance of the buttons based on the selected avatar
     func updateButtonAppearance() {
@@ -78,13 +81,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         updateLabel()
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard
-        if  let product = defaults.object(forKey: "lastProduct") as? String {
+        if let product = defaults.object(forKey: "lastProduct") as? String {
             tfName.text = product
         }
-        if  let code = defaults.object(forKey: "lastCode") as? String {
+        if let code = defaults.object(forKey: "lastCode") as? String {
             tfCode.text = code
         }
-        if  let price = defaults.object(forKey: "lastPrice") as? String {
+        if let price = defaults.object(forKey: "lastPrice") as? String {
             tfPrice.text = price
         }
         if let lastDateStr = defaults.string(forKey: "lastDate") {
@@ -96,6 +99,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+
 
 
     @IBAction func addProduct(sender: UIButton) {
