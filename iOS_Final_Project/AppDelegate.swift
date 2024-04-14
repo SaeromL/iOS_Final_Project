@@ -79,15 +79,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let code = String(cString: acode!)
                         let price = String(cString: aprice!)
                         let quanity = Int(cqty)
-                        let date = dateFormatter.date(from: adate)
+                        let dateString = adate != nil ? String(cString: adate) : ""
+                        let date = dateFormatter.date(from: dateString)
                         let avatar = String(cString: cavatar!)
                         
-                        let data : MyData = .init()
-                        data.initWithData(theRow: id, theProduct: product, theCode: code,  thePrice: price, theQuanity: quanity,theDate: date!,theAvatar: avatar)
-                        productData.append(data)
+//                        let data : MyData = .init()
+//                        data.initWithData(theRow: id, theProduct: product, theCode: code,  thePrice: price, theQuanity: quanity,theDate: date!,theAvatar: avatar)
+//                        productData.append(data)
+//                        
+//                        print("query result: ")
+//                        print("\(id) | \(product) | \(code) | \(price)| \(quanity) | \(adate) | \(avatar)")
                         
-                        print("query result: ")
-                        print("\(id) | \(product) | \(code) | \(price)| \(quanity) | \(adate) | \(avatar)")
+                        if let date = date {
+                            let data = MyData()
+                            data.initWithData(theRow: id, theProduct: product, theCode: code,  thePrice: price, theQuanity: quanity, theDate: date, theAvatar: avatar)
+                            productData.append(data)
+
+                            print("query result: ")
+                            print("\(id) | \(product) | \(code) | \(price)| \(quanity) | \(dateString) | \(avatar)")
+                        } else {
+                            print("Error parsing date: \(dateString)")
+                        }
                         
                     }
                     sqlite3_finalize(queryStatement)    // free memory
@@ -234,6 +246,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return returnCode
         }
     
+
+    func updateRecordInDatabase(productData: MyData) {
+        let updateQuery = "UPDATE data SET product = ?, code = ?, price = ?, quantity = ?, date = ?, avatar = ? WHERE id = ?;"
+        
+        if let db = openDatabase() {
+            var updateStatement: OpaquePointer?
+            if sqlite3_prepare_v2(db, updateQuery, -1, &updateStatement, nil) == SQLITE_OK {
+                // Convert fields to NSString before binding
+                let productStr = productData.product! as NSString
+                let codeStr = productData.code! as NSString
+                let priceStr = productData.price! as NSString
+                let quantityStr = String(productData.quanity ?? 0) as NSString
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let dateStr = dateFormatter.string(from: productData.date ?? Date()) as NSString
+                
+                let avatarStr = productData.avatar! as NSString
+                
+                // Bind parameters
+                sqlite3_bind_text(updateStatement, 1, productStr.utf8String, -1, nil)
+                sqlite3_bind_text(updateStatement, 2, codeStr.utf8String, -1, nil)
+                sqlite3_bind_text(updateStatement, 3, priceStr.utf8String, -1, nil)
+                sqlite3_bind_text(updateStatement, 4, quantityStr.utf8String, -1, nil)
+                sqlite3_bind_text(updateStatement, 5, dateStr.utf8String, -1, nil)
+                sqlite3_bind_text(updateStatement, 6, avatarStr.utf8String, -1, nil)
+                sqlite3_bind_int(updateStatement, 7, Int32(productData.id ?? 0))
+                
+                // Execute the update query
+                if sqlite3_step(updateStatement) == SQLITE_DONE {
+                    print("Update successful")
+                    let rowID = sqlite3_last_insert_rowid(db)
+                    print("Successfully updated row \(rowID)")
+                    // Update your data source if needed
+                } else {
+                    print("Update failed")
+                }
+            } else {
+                print("Error preparing update statement")
+            }
+            sqlite3_finalize(updateStatement)
+            sqlite3_close(db)
+        } else {
+            print("Unable to open database")
+        }
+    }
+
     
     func openDatabase() -> OpaquePointer? {
         var db: OpaquePointer? = nil

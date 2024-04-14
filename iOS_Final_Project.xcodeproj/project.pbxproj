@@ -53,6 +53,7 @@
 		CEA93D952BC8A83600BFC5A5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CEA93D942BC8A83600BFC5A5 /* FirebaseStorageCombine-Community */; };
 		ED1EE79D2BC883FC004EC878 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EE79C2BC883FC004EC878 /* SearchViewController.swift */; };
 		ED1EE79F2BC8840D004EC878 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EE79E2BC8840D004EC878 /* LoginViewController.swift */; };
+		ED1FF6642BCC125900B0AA49 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FF6632BCC125900B0AA49 /* EditViewController.swift */; };
 		EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */; };
 		EDE540C72BBB7D5D00F1023F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */; };
 		EDE540C92BBB7D5D00F1023F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE540C82BBB7D5D00F1023F /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		CEA93D5D2BC8A4DC00BFC5A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED1EE79C2BC883FC004EC878 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED1EE79E2BC8840D004EC878 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED1FF6632BCC125900B0AA49 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		EDE540C12BBB7D5D00F1023F /* iOS_Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE540C42BBB7D5D00F1023F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE540C62BBB7D5D00F1023F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				EDE540C82BBB7D5D00F1023F /* ViewController.swift */,
 				7B6454472BC7AA47009AF807 /* AddViewController.swift */,
+				ED1FF6632BCC125900B0AA49 /* EditViewController.swift */,
 				7B6454492BC7AA5F009AF807 /* ProductListController.swift */,
 				CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */,
 				CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */,
@@ -338,6 +341,7 @@
 				CEA93D5C2BC8890500BFC5A5 /* RegisterViewController.swift in Sources */,
 				B0A8C5382BC8FB06007751C3 /* Utilities.swift in Sources */,
 				EDE540C52BBB7D5D00F1023F /* AppDelegate.swift in Sources */,
+				ED1FF6642BCC125900B0AA49 /* EditViewController.swift in Sources */,
 				7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */,
 				7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */,
 				7B64544C2BC7AAC2009AF807 /* MyData.swift in Sources */,

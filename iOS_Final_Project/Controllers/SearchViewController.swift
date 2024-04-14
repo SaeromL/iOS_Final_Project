@@ -84,6 +84,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             tableCell.profileImg.image = nil
         }
         
+        // edit button
+        let editButton = UIButton(type: .system)
+        editButton.setTitle("Edit", for: .normal)
+        editButton.addTarget(self, action: #selector(editButtonTapped(_:)), for: .touchUpInside)
+        editButton.tag = indexPath.row // Store the index of the product
+        tableCell.accessoryView = editButton
+        
         return tableCell
     }
 
@@ -175,6 +182,35 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             // Reload table view to display search results
             tableView.reloadData()
         }
+    
+        @objc @IBAction func editButtonTapped(_ sender: UIButton) {
+            // Get the point of the button's center relative to the table view
+            let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+            
+            // Get the indexPath of the cell containing the button
+            if let indexPath = tableView.indexPathForRow(at: buttonPosition) {
+                // Get the selected product using the index path
+                let selectedProduct = searchResults[indexPath.row]
+                print("index: \(indexPath.row)")
+                
+                // Perform segue and pass the selected product
+                performSegue(withIdentifier: "segueToEditView", sender: selectedProduct)
+            } else {
+                print("Unable to get indexPath for button")
+            }
+        }
+
+        // Perform segue and pass the selected product
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "segueToEditView" {
+                if let editViewController = segue.destination as? EditViewController,
+                   let selectedProduct = sender as? MyData {
+                    editViewController.product = selectedProduct
+                }
+            }
+        }
+    
+
     
     }
 
