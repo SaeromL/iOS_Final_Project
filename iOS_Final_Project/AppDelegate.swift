@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var databaseName : String = "project.db"
     var databasePath : String = ""
     var productData : [MyData] = []
-    
+    var db: OpaquePointer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         checkAndCreateDatabase()
         readDataFromDatabase()
+        
+        // Set the db property of AppDelegate
+        db = openDatabase()
         return true
     }
     
@@ -192,5 +195,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             return returnCode
         }
+    
+    
+    func openDatabase() -> OpaquePointer? {
+        var db: OpaquePointer? = nil
+        if sqlite3_open(databasePath, &db) == SQLITE_OK {
+            print("Successfully opened database at \(databasePath)")
+            return db
+        } else {
+            print("Unable to open database")
+            return nil
+        }
+    }
     
 }

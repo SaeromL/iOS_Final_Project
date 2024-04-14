@@ -80,7 +80,7 @@ class DisplayReportViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EasySiteCell", for: indexPath) as! EasySiteCell
         
         let myData = filteredProducts[indexPath.row]
         cell.primaryLabel.text = myData.product
