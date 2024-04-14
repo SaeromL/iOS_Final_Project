@@ -126,7 +126,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 
-    
+    func deleteDataFromSQLite(productData: MyData) -> Bool {
+        // Open the database
+        if let db = openDatabase() {
+            // Construct the DELETE query
+            let queryString = "DELETE FROM data WHERE id = ?;"
+            
+            // Prepare the DELETE statement
+            var deleteStatement: OpaquePointer?
+            if sqlite3_prepare_v2(db, queryString, -1, &deleteStatement, nil) == SQLITE_OK {
+                // Bind the primary key value to the statement
+                sqlite3_bind_int(deleteStatement, 1, Int32(productData.id ?? 0))
+                
+                // Execute the DELETE statement
+                if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                    // Deletion successful
+                    print("Successfully deleted data")
+                    sqlite3_finalize(deleteStatement) // Finalize the statement
+                    sqlite3_close(db) // Close the database connection
+                    return true
+                } else {
+                    // Deletion failed
+                    print("Error deleting data: ", sqlite3_errmsg(db))
+                }
+            } else {
+                // Error preparing the statement
+                print("Error preparing DELETE statement")
+            }
+            
+            // Finalize the statement and close the database connection in case of errors
+            sqlite3_finalize(deleteStatement)
+            sqlite3_close(db)
+        } else {
+            // Error opening the database
+            print("Error opening database")
+        }
+        
+        return false
+    }
+
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
@@ -163,7 +201,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     sqlite3_bind_text(insertStatement, 1, productStr.utf8String, -1, nil)
                     sqlite3_bind_text(insertStatement, 2, productCodeStr.utf8String, -1, nil)
                     sqlite3_bind_text(insertStatement, 3, priceStr.utf8String, -1, nil)
-                    sqlite3_bind_text(insertStatement, 4, dateStr.utf8String, -1, nil)
+                    sqlite3_bind_text(insertStatement, 4, quanityStr.utf8String, -1, nil)
                     sqlite3_bind_text(insertStatement, 5, dateStr.utf8String, -1, nil)
                     sqlite3_bind_text(insertStatement, 6, avatarStr.utf8String, -1, nil)
                     

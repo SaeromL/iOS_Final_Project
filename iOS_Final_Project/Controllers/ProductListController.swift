@@ -76,17 +76,30 @@ class ProductListController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let modifyAction = UIContextualAction(style: .normal, title: "Delete", handler: {
+        let modifyAction = UIContextualAction(style: .destructive, title: "Delete", handler: { [weak self] _, _, completionHandler in
+            guard let self = self else { return }
             
-            ac, vi, su in
-            print("Delete button tapped")
-            su(true)
+            let dataToDelete = self.mainDelegate.productData[indexPath.row]
+            
+            // Call the delete method from AppDelegate
+            if self.mainDelegate.deleteDataFromSQLite(productData: dataToDelete) {
+                // If deletion is successful, remove the item from the data source
+                self.mainDelegate.productData.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } else {
+                // Handle deletion failure
+                // You can show an alert or perform any other action here
+                print("Failed to delete data")
+            }
+            
+            // Call the completion handler
+            completionHandler(true)
         })
         modifyAction.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [modifyAction])
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowNum = indexPath.row
