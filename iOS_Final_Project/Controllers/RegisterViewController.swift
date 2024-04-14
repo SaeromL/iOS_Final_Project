@@ -79,8 +79,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         }
                         else 
                         {
-                            // Registration successful, perform segue to login view controller
-                            self.performSegue(withIdentifier: "RegisterToLoginSegue", sender: nil)
+                            // Registration successful, dismiss the registration screen
+                            self.dismiss(animated: true, completion: nil)
                         }
                     }
                 }

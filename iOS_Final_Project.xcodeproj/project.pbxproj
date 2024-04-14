@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B204A952BC8FDA400ED98FC /* superman.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B204A922BC8FDA300ED98FC /* superman.png */; };
+		7B204A962BC8FDA400ED98FC /* batman.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B204A932BC8FDA400ED98FC /* batman.jpeg */; };
+		7B204A9C2BC8FEC100ED98FC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B204A9B2BC8FEB900ED98FC /* libsqlite3.tbd */; };
+		7B204AA42BC90A5500ED98FC /* flash.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B204AA32BC90A5500ED98FC /* flash.jpeg */; };
+		7B60DFA22BCA5CD7004A4D6D /* AboutApp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B60DFA12BCA5CD7004A4D6D /* AboutApp.jpg */; };
 		7B6454482BC7AA47009AF807 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454472BC7AA47009AF807 /* AddViewController.swift */; };
 		7B64544A2BC7AA5F009AF807 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454492BC7AA5F009AF807 /* ProductListController.swift */; };
 		7B64544C2BC7AAC2009AF807 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64544B2BC7AAC2009AF807 /* MyData.swift */; };
 		7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544D2BC7AC9C009AF807 /* main.jpeg */; };
 		7B6454502BC7B09F009AF807 /* add.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B64544F2BC7B09F009AF807 /* add.jpeg */; };
 		7B6454522BC7B3F0009AF807 /* EasySiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */; };
+		7BD38B712BC9EC5800B22008 /* project.db in Resources */ = {isa = PBXBuildFile; fileRef = 7BD38B702BC9EC5800B22008 /* project.db */; };
 		B0A8C5382BC8FB06007751C3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5372BC8FB06007751C3 /* Utilities.swift */; };
 		CEA93D582BC87ED500BFC5A5 /* DisplayReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */; };
 		CEA93D5A2BC87EEE00BFC5A5 /* ReportListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */; };
@@ -56,12 +62,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B204A922BC8FDA300ED98FC /* superman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superman.png; sourceTree = "<group>"; };
+		7B204A932BC8FDA400ED98FC /* batman.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = batman.jpeg; sourceTree = "<group>"; };
+		7B204A9A2BC8FEAD00ED98FC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7B204A9B2BC8FEB900ED98FC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7B204AA32BC90A5500ED98FC /* flash.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flash.jpeg; sourceTree = "<group>"; };
+		7B60DFA12BCA5CD7004A4D6D /* AboutApp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutApp.jpg; sourceTree = "<group>"; };
 		7B6454472BC7AA47009AF807 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		7B6454492BC7AA5F009AF807 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
 		7B64544B2BC7AAC2009AF807 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 		7B64544D2BC7AC9C009AF807 /* main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpeg; sourceTree = "<group>"; };
 		7B64544F2BC7B09F009AF807 /* add.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = add.jpeg; sourceTree = "<group>"; };
 		7B6454512BC7B3F0009AF807 /* EasySiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySiteCell.swift; sourceTree = "<group>"; };
+		7BD38B702BC9EC5800B22008 /* project.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = project.db; sourceTree = "<group>"; };
 		B0A8C5372BC8FB06007751C3 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEA93D572BC87ED500BFC5A5 /* DisplayReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReportViewController.swift; sourceTree = "<group>"; };
 		CEA93D592BC87EEE00BFC5A5 /* ReportListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListingViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +99,7 @@
 			files = (
 				CEA93D732BC8A83600BFC5A5 /* FirebaseDatabase in Frameworks */,
 				CEA93D812BC8A83600BFC5A5 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				7B204A9C2BC8FEC100ED98FC /* libsqlite3.tbd in Frameworks */,
 				CEA93D792BC8A83600BFC5A5 /* FirebaseFirestore in Frameworks */,
 				CEA93D652BC8A83600BFC5A5 /* FirebaseAnalyticsSwift in Frameworks */,
 				CEA93D612BC8A83600BFC5A5 /* FirebaseAnalytics in Frameworks */,
@@ -117,9 +131,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B204A992BC8FEAD00ED98FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B204A9B2BC8FEB900ED98FC /* libsqlite3.tbd */,
+				7B204A9A2BC8FEAD00ED98FC /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B6454442BC7A995009AF807 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7B60DFA12BCA5CD7004A4D6D /* AboutApp.jpg */,
+				7B204A932BC8FDA400ED98FC /* batman.jpeg */,
+				7B204AA32BC90A5500ED98FC /* flash.jpeg */,
+				7B204A922BC8FDA300ED98FC /* superman.png */,
 				7B64544F2BC7B09F009AF807 /* add.jpeg */,
 				7B64544D2BC7AC9C009AF807 /* main.jpeg */,
 			);
@@ -129,6 +156,7 @@
 		7B6454452BC7A99B009AF807 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				7BD38B702BC9EC5800B22008 /* project.db */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -161,6 +189,7 @@
 			children = (
 				EDE540C32BBB7D5D00F1023F /* iOS_Final_Project */,
 				EDE540C22BBB7D5D00F1023F /* Products */,
+				7B204A992BC8FEAD00ED98FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,12 +311,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B204A962BC8FDA400ED98FC /* batman.jpeg in Resources */,
 				7B6454502BC7B09F009AF807 /* add.jpeg in Resources */,
+				7B204A952BC8FDA400ED98FC /* superman.png in Resources */,
 				EDE540CE2BBB7D6300F1023F /* Assets.xcassets in Resources */,
+				7B204AA42BC90A5500ED98FC /* flash.jpeg in Resources */,
 				EDE540D12BBB7D6300F1023F /* Base in Resources */,
 				7B64544E2BC7AC9C009AF807 /* main.jpeg in Resources */,
+				7BD38B712BC9EC5800B22008 /* project.db in Resources */,
 				EDE540CC2BBB7D5D00F1023F /* Base in Resources */,
 				CEA93D5E2BC8A4DC00BFC5A5 /* GoogleService-Info.plist in Resources */,
+				7B60DFA22BCA5CD7004A4D6D /* AboutApp.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
