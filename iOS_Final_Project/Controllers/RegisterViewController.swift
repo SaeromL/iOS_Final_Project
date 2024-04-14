@@ -12,7 +12,6 @@ import Firebase
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
@@ -25,20 +24,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpElements()
+        errorPrompt()
     }
     
-    func setUpElements() {
-    
+    func errorPrompt() {
         // Hide the error label
         errorLabel.alpha = 0
-    
     }
-
 
     @IBAction func cancelTapped(_ sender: Any) {
+        performSegue(withIdentifier: "RegisterToLoginSegue", sender: self)
+
     }
-    
     
     @IBAction func registerTapped(_ sender: Any) {
         
@@ -46,32 +43,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         let error = validateFields()
         
         if error != nil {
-            
-            // There's something wrong with the fields, show error message
+            // if there's something wrong with the fields, an error message will be displayed
             showError(error!)
         }
         else {
-            
-            // Create cleaned versions of the data
-            let name = tfName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = tfEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = tfPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
-                // Check for errors
+                // Check for any errors
                 if err != nil {
                     
-                    // There was an error creating the user
                     self.showError("Error creating user")
                 }
                 else {
                     
-                    // User was created successfully, now store the first name and last name
+                    // User was created successfully, email will be stored in database
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["name":name, "email":email, "uid": result!.user.uid ]) { (error) in
+                    db.collection("users").addDocument(data: ["email":email, "uid": result!.user.uid ]) { (error) in
                         
                         if error != nil {
                             // Show error message
@@ -79,7 +71,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         }
                         else 
                         {
-                            // Registration successful, dismiss the registration screen
+                            // Registration successful so registration screen will be dismissed
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
@@ -89,7 +81,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func showError(_ message:String) {
-        
+        //error message will be visible
         errorLabel.text = message
         errorLabel.alpha = 1
     }
@@ -97,19 +89,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func validateFields() -> String? {
         
-        // Check that all fields are filled in
-        if tfName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        //All fields must be filled in
+        if tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all fields."
         }
         
-        // Check if the password is secure
+        // Password must be secure
         let cleanedPassword = tfPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
-            // Password isn't secure enough
+            // if password isn't secure enough
             return "Password not secure enough."
         }
         
