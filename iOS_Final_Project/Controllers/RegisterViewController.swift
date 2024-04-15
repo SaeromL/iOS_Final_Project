@@ -11,7 +11,7 @@ import Firebase
 
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         errorPrompt()
     }
@@ -31,10 +31,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Hide the error label
         errorLabel.alpha = 0
     }
-
+    
     @IBAction func cancelTapped(_ sender: Any) {
         performSegue(withIdentifier: "RegisterToLoginSegue", sender: self)
-
+        
     }
     
     @IBAction func registerTapped(_ sender: Any) {
@@ -69,7 +69,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             // Show error message
                             self.showError("Error saving user data")
                         }
-                        else 
+                        else
                         {
                             // Registration successful so registration screen will be dismissed
                             self.dismiss(animated: true, completion: nil)
@@ -84,27 +84,50 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         //error message will be visible
         errorLabel.text = message
         errorLabel.alpha = 1
+        
+        if let errorMessage = validateFields() {
+            print("Error Message:")
+            print(errorMessage)
+            
+            // Set up label properties
+            errorLabel.numberOfLines = 0
+            errorLabel.lineBreakMode = .byWordWrapping
+            
+            // Assign error message to label
+            errorLabel.text = errorMessage
+            errorLabel.alpha = 1  // Make errorLabel visible
+        }
+
     }
     
     
     func validateFields() -> String? {
-        
-        //All fields must be filled in
-        if tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
+        // Check if email or password fields are empty
+        if tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            tfPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields."
         }
         
-        // Password must be secure
+        // Validate password strength
         let cleanedPassword = tfPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        if Utilities.isPasswordValid(cleanedPassword) == false {
-            // if password isn't secure enough
-            return "Password not secure enough."
+        if !Utilities.isPasswordValid(cleanedPassword) {
+            // Construct a multi-line error message for password criteria
+            let line1 = "Password not secure enough. Must contain:"
+            let line2 = "- At least one uppercase letter"
+            let line3 = "- At least one special character"
+            let line4 = "- At least one digit"
+            
+            // Combine lines into a single multi-line string
+            let errorMessage = "\(line1)\n\(line2)\n\(line3)\n\(line4)"
+            
+            return errorMessage
         }
         
-        return nil
+        return nil  // Return nil if all fields are valid
     }
+    
+
     
     //to make the keyboard disappear
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
