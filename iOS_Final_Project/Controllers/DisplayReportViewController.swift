@@ -12,87 +12,52 @@ class DisplayReportViewController: UIViewController, UITableViewDataSource, UITa
     
     let mainDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var filter: String?
-    var value: Int?
-    var date: Date?
-    var reportType: String?
-    
-    var filteredProducts: [MyData] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        fetchAndFilterData()
+
+        // Do any additional setup after loading the view.
+        mainDelegate.readDataFromDatabase()
     }
     
-    func fetchAndFilterData() {
-        if let reportType = reportType {
-            switch reportType {
-            case "quantity":
-                if let filterValue = value {
-                    filteredProducts = mainDelegate.productData.filter { myData in
-                        switch filter {
-                        case "equal": return myData.quanity == filterValue
-                        case "greater": return myData.quanity ?? 0 > filterValue
-                        case "less": return myData.quanity ?? 0 < filterValue
-                        default: return false
-                        }
-                    }
-                }
-            case "added":
-                if let dateValue = date {
-                    filteredProducts = mainDelegate.productData.filter { myData in
-                        guard let productDate = myData.date else { return false }
-                        switch filter {
-                        case "equal": return Calendar.current.isDate(productDate, inSameDayAs: dateValue)
-                        case "greater": return productDate > dateValue
-                        case "less": return productDate < dateValue
-                        default: return false
-                        }
-                    }
-                }
-            case "price":
-                if let filterValue = value {
-                    filteredProducts = mainDelegate.productData.filter { myData in
-                        guard let productPrice = Int(myData.price ?? "") else { return false }
-                        switch filter {
-                        case "equal": return productPrice == filterValue
-                        case "greater": return productPrice > filterValue
-                        case "less": return productPrice < filterValue
-                        default: return false
-                        }
-                    }
-                }
-            default:
-                break
-            }
-        }
-        tableView.reloadData()
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
-
-    // MARK: - UITableViewDataSource
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredProducts.count
+        return mainDelegate.filteredProductData.count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EasySiteCell", for: indexPath) as! EasySiteCell
         
-        let myData = filteredProducts[indexPath.row]
-        cell.primaryLabel.text = myData.product
-        cell.secondaryLabel.text = myData.code
-        cell.thirdLabel.text = myData.price
-        cell.fourLabel.text = myData.quanity.map(String.init) ?? ""
-        cell.fifthLabel.text = myData.date.map { DateFormatter.localizedString(from: $0, dateStyle: .short, timeStyle: .none) } ?? ""
-        cell.profileImg.image = UIImage(named: myData.avatar ?? "")
+        let tableCell: EasySiteCell = tableView.dequeueReusableCell(withIdentifier: "easySiteCell")  as? EasySiteCell ?? EasySiteCell(style: .default, reuseIdentifier: "easySiteCell")
+                                                                
+        let rowNum = indexPath.row
+        tableCell.primaryLabel.text = mainDelegate.filteredProductData[rowNum].product!
+        tableCell.secondaryLabel.text = mainDelegate.filteredProductData[rowNum].code
+        tableCell.thirdLabel.text = mainDelegate.filteredProductData[rowNum].price
         
-        return cell
-    }
+       
+        if let quanity = mainDelegate.filteredProductData[rowNum].quanity {
+            tableCell.fourLabel.text = String(quanity)
+         } else {
+             tableCell.fourLabel.text = ""
+         }
+        
+        if let dob = mainDelegate.filteredProductData[rowNum].date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            tableCell.fifthLabel.text = dateFormatter.string(from: dob)
+        } else {
+            tableCell.fifthLabel.text = ""
+        }
 
+        
+        let imgName = UIImage(named: mainDelegate.filteredProductData[rowNum].avatar!)
+        
+        tableCell.profileImg.image = imgName
+        tableCell.accessoryType = .disclosureIndicator
+        return tableCell
+    
+    }
        
     
     /*

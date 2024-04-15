@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var databaseName : String = "project.db"
     var databasePath : String = ""
     var productData : [MyData] = []
+    var filteredProductData : [MyData] = []
     var db: OpaquePointer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
