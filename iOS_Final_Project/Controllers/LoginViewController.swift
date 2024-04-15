@@ -73,7 +73,11 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     // After successful login
-                    self.dismiss(animated: true)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainViewController = storyboard.instantiateViewController(withIdentifier: "mainViewController")
+                    
+                    self.view.window?.rootViewController = mainViewController
+                    self.view.window?.makeKeyAndVisible()
                 }
             }
         }
