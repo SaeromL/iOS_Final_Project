@@ -22,23 +22,23 @@ class ReportListingViewController: UIViewController {
     
     
     @IBAction func allProducts(_ sender: Any) {
-        mainDelegate.filteredProductData = mainDelegate.productData
+        mainDelegate.allProducts()
         openDisplay()
     }
     
     @IBAction func productQtdReport(_ sender: Any) {
         showFilterOptions(forReportType: "quantity")
-        openDisplay()
+        
     }
     
     @IBAction func productAddedReport(_ sender: Any) {
         showFilterOptions(forReportType: "added")
-        openDisplay()
+        
     }
     
     @IBAction func productPriceReport(_ sender: Any) {
         showFilterOptions(forReportType: "price")
-        openDisplay()
+        
     }
     
     func showFilterOptions(forReportType reportType: String) {
@@ -114,6 +114,7 @@ class ReportListingViewController: UIViewController {
         default:
             mainDelegate.filteredProductData = mainDelegate.productData
         }
+        openDisplay()
     }
     
     private func applyDateFilter(filter: String, date: Date, filterDate: Date) -> Bool {

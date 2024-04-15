@@ -256,7 +256,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Reports"/>
                                 <connections>
                                     <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOH-94-Urh"/>
-                                    <segue destination="Oeg-QI-3Al" kind="presentation" identifier="reportProductSegue" modalPresentationStyle="fullScreen" id="v6B-YG-dSE"/>
+                                    <segue destination="Oeg-QI-3Al" kind="presentation" identifier="reportProductSegue" id="v6B-YG-dSE"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-Qd-feZ">
@@ -923,7 +923,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="355" id="kyK-tZ-mVo" customClass="EasySiteCell" customModule="iOS_Final_Project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="easySiteCell" rowHeight="355" id="kyK-tZ-mVo" customClass="EasySiteCell" customModule="iOS_Final_Project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kyK-tZ-mVo" id="Vek-fo-wog">
@@ -1019,24 +1019,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
-                                <rect key="frame" x="0.0" y="57" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Report Listing" id="PtS-OJ-COS">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="cNy-e3-WAz">
-                                            <connections>
-                                                <segue destination="tfl-c9-E7p" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="Hdg-ik-b8R"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0el-Eq-BRF">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0el-Eq-BRF">
                                 <rect key="frame" x="113" y="495" width="185" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Ru0-7G-BJn"/>
-                                    <constraint firstAttribute="width" constant="185" id="dbh-9e-xdj"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Product Price"/>
                                 <connections>
@@ -1052,54 +1037,43 @@
                                     <action selector="productQtdReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="xmQ-ty-i1K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaJ-jO-slc">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaJ-jO-slc">
                                 <rect key="frame" x="113" y="657" width="185" height="69"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="2NW-hP-sV5"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="7jS-Wc-m5b"/>
-                                    <constraint firstAttribute="width" constant="185" id="vJI-oF-NtU"/>
-                                    <constraint firstAttribute="height" constant="70" id="wtQ-My-CyO"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Product List"/>
                                 <connections>
-                                    <action selector="allProductcsReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="U18-H5-coO"/>
                                     <action selector="allProducts:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="GMK-jd-GRU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2d-uu-MYo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2d-uu-MYo">
                                 <rect key="frame" x="113" y="337" width="185" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Q29-Pm-8kS"/>
-                                    <constraint firstAttribute="width" constant="185" id="n2D-Aa-eMD"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Product Added"/>
                                 <connections>
                                     <action selector="productAddedReport:" destination="Oeg-QI-3Al" eventType="touchUpInside" id="5PB-Ml-k2T"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-4H-b1e">
+                                <rect key="frame" x="0.0" y="61" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Report Listing" id="PtS-OJ-COS">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrowshape.turn.up.backward" catalog="system" id="qCf-zW-pWt">
+                                            <connections>
+                                                <segue destination="tfl-c9-E7p" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="1BN-c6-VJt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uWY-Cr-1dK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="0el-Eq-BRF" secondAttribute="trailing" constant="95" id="3w1-y0-kKB"/>
-                            <constraint firstItem="W2d-uu-MYo" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="113" id="5CV-d2-wOt"/>
-                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="bottom" secondItem="IaJ-jO-slc" secondAttribute="bottom" constant="151" id="92k-7H-VkZ"/>
-                            <constraint firstItem="0el-Eq-BRF" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="113" id="Fk5-7u-z9y"/>
-                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="bottom" secondItem="0el-Eq-BRF" secondAttribute="bottom" constant="184" id="Hyl-JD-gPs"/>
-                            <constraint firstItem="IaJ-jO-slc" firstAttribute="leading" secondItem="uWY-Cr-1dK" secondAttribute="leading" constant="168" id="N9H-4I-Lhv"/>
-                            <constraint firstItem="0el-Eq-BRF" firstAttribute="top" secondItem="W2d-uu-MYo" secondAttribute="bottom" constant="88" id="S8C-vg-VuR"/>
-                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="IaJ-jO-slc" secondAttribute="trailing" constant="150" id="UF5-qr-Iuc"/>
-                            <constraint firstItem="uWY-Cr-1dK" firstAttribute="trailing" secondItem="W2d-uu-MYo" secondAttribute="trailing" constant="95" id="VO2-j6-NEd"/>
-                            <constraint firstItem="0el-Eq-BRF" firstAttribute="top" secondItem="W2d-uu-MYo" secondAttribute="bottom" constant="88" id="cHV-Ex-wER"/>
-                            <constraint firstItem="IaJ-jO-slc" firstAttribute="top" secondItem="0el-Eq-BRF" secondAttribute="bottom" constant="80" id="cXW-Ic-21q"/>
-                            <constraint firstItem="Kqt-4H-b1e" firstAttribute="trailing" secondItem="Tu4-vq-aCX" secondAttribute="trailing" id="jS9-ED-ZSi"/>
-                            <constraint firstItem="Kqt-4H-b1e" firstAttribute="leading" secondItem="Tu4-vq-aCX" secondAttribute="leading" id="x02-4k-iG4"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnAllProducts" destination="IaJ-jO-slc" id="PAC-AQ-iya"/>
+                        <outlet property="btnAllProducts" destination="IaJ-jO-slc" id="fTQ-5D-9jU"/>
                         <outlet property="btnProductAdded" destination="W2d-uu-MYo" id="9Sr-TB-d9g"/>
                         <outlet property="btnProductPrice" destination="0el-Eq-BRF" id="v5Q-Q6-nii"/>
                         <outlet property="btnProductQtd" destination="hFL-Ey-zQK" id="gAV-FD-60l"/>
@@ -1113,7 +1087,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="S1o-QK-0VP"/>
-        <segue reference="2Iy-Ys-8mc"/>
+        <segue reference="dru-pJ-698"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AboutApp.jpg" width="4000" height="6000"/>
