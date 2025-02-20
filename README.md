@@ -11,7 +11,7 @@
 ✅ Organize products with categories<br>
 ✅ Search functionality for quick access<br>
 ✅ User-friendly interface built with SwiftUI<br>
-✅ Persistent data storage using Firebase
+✅ Persistent data storage using Firebase<br>
 ✅ Generate analytical reports
 
 <h3>Future Improvements</h3>
