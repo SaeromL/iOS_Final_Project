@@ -32,7 +32,7 @@
 <p>1️⃣ Clone the repository:</p>
 
 <code>git clone https://github.com/SaeromL/iOS_Final_Project.git</code><br>
-<code>cd inventory-app</code>
+<code>cd iOS_Final_Project</code>
 
 <p>2️⃣ Open InventoryApp.xcodeproj in Xcode</p>
 <p>3️⃣ Run the project on an iPhone simulator or a physical device</p>
